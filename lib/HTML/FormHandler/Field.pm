@@ -987,6 +987,8 @@ sub default_render_filter {
     return $string;
 }
 
+has 'tabindex' => ( is => 'rw', isa => 'Int' );
+
 has 'input_param' => ( is => 'rw', isa => 'Str' );
 
 has 'language_handle' => (

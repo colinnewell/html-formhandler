@@ -10,12 +10,14 @@ sub render {
     my $self = shift;
     my $result = shift || $self->result;
     my $checkbox_value = $self->checkbox_value;
+    my $t;
 
     my $output = '<input type="checkbox" name="'
         . $self->html_name . '" id="' . $self->id . '" value="'
         . $self->html_filter($checkbox_value) . '"';
     $output .= ' checked="checked"'
         if $result->fif eq $checkbox_value;
+    $output .= qq{ tabindex="$t"} if $t = $self->tabindex;
     $output .= $self->_add_html_attributes;
     $output .= ' />';
 

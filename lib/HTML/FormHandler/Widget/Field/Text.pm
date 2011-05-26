@@ -16,6 +16,7 @@ sub render {
         . $self->html_name . '" id="' . $self->id . '"';
     $output .= qq{ size="$t"} if $t = $self->size;
     $output .= qq{ maxlength="$t"} if $t = $self->maxlength;
+    $output .= qq{ tabindex="$t"} if $t = $self->tabindex;
     $output .= ' value="' . $self->html_filter($result->fif) . '"';
     $output .= $self->_add_html_attributes;
     $output .= ' />';

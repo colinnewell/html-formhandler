@@ -11,11 +11,13 @@ has 'no_render_label' => ( is => 'ro', isa => 'Bool', default => 1 );
 sub render {
     my ( $self, $result ) = @_;
 
+    my $t;
     $result ||= $self->result;
     my $output = '<input type="submit" name="';
     $output .= $self->html_name . '"';
     $output .= ' id="' . $self->id . '"';
     $output .= ' value="' . $self->html_filter($self->_localize($self->value)) . '"';
+    $output .= qq{ tabindex="$t"} if $t = $self->tabindex;
     $output .= $self->_add_html_attributes;
     $output .= ' />';
     return $self->wrap_field( $result, $output );
