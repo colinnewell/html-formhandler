@@ -236,6 +236,7 @@ Compound fields will have an array of errors from the subfields.
                  form name, use 'html_prefix' in your form)
    disabled    - for the HTML flag
    readonly    - for the HTML flag
+   tabindex    - for the HTML tab index
    javascript  - for a Javascript string
    order       - Used for sorting errors and fields. Built automatically,
                  but may also be explicitly set
